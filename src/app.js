@@ -4,7 +4,7 @@ const path =  require('path');
 
 const app = express();
 
-const indexRouter = require('./src/routes/index');
+const indexRouter = require('./routes/index');
 
 app.use('/', indexRouter);
 
