@@ -4,18 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
     <title>Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-slate-800 flex flex-col justify-center items-center
+<body class="bg-slate-800 flex justify-center items-center
 h-screen w-screen">
-    <form method="post"
-    class="bg-indigo-800 w-4/6 h-4/6 rounded-md text-white flex flex-col
-    items-center justify-around p-64">
-        <input type="text" name="name" class="text-slate-800">
-        <input type="password" name="password" class="text-slate-800">
-        <input type="submit" value="Enviar"
-        class="h-12 w-64 bg-slate-500">
-    </form>
+    <%- include('../components/login') %>
 </body>
 </html>

@@ -6,25 +6,20 @@
 
 html,
 body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: rgb(255, 255, 255);
+    overflow-x: hidden;
+    width: 100vw;
 }
 
 .container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 10, 9vh;
     grid-template-areas:
-        "header header"
-        "main main"
-        "footer footer";
+        "header"
+        "main"
+        "footer";
 }
 
 .logo {
-    padding: 32px;
-    margin: 11vh;
+    padding: 2em;
     border-radius: 100%;
     background-image: url("../images/logo\ tt.png");
     background-size: cover;
@@ -37,15 +32,13 @@ header {
     background-color: rgb(44, 40, 51);
     color: rgb(255, 255, 255);
     grid-area: header;
-    height: 60px;
+    height: 15vh;
     grid-column-start: 1;
     grid-column-end: 3;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding-left: 10px;
-
-
+    padding: 0 5em;
 }
 
 header ul :hover {
@@ -57,8 +50,6 @@ header nav {
     justify-content: right;
     width: 90%;
     color: rgb(74, 63, 49);
-    padding: 290px;
-
 }
 
 header nav ul {
@@ -77,13 +68,6 @@ header li {
     padding: 10px;
 }
 
-h1 {
-    font-size: 26px;
-    color: rgb(255, 255, 255);
-
-
-}
-
 main {
     background-color: rgb(49, 49, 70);
     color: aliceblue;
@@ -92,7 +76,7 @@ main {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    height: 700px;
+    height: 75vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -104,45 +88,11 @@ main {
     background-color: black;
 }
 
-aside {
-    background-color: rgb(117, 96, 49);
-    color: aliceblue;
-    height: 1021px;
-    grid-area: aside;
-    background-image: url(WhatsApp\ Image\ 2023-04-26\ at\ 08.33.07.jpeg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    grid-column-start: 1;
-    grid-column-end: 1;
-}
-
 footer {
     background-color: rgb(17, 18, 30);
-    background-image: url();
-    background-repeat: no-repeat;
-    background-size: cover;
     color: aliceblue;
-    grid-column-start: 1;
-    grid-column-end: 3;
     grid-area: footer;
-    height: 240px;
-    padding: 100px;
-
-}
-
-footer nav {
-    display: flex;
-    width: 90%;
-    color: aliceblue;
-
-
-
-
-}
-
-footer nav ul {
-    display: flex;
-
+    height: 25vh;
 }
 
 footer li {
@@ -151,7 +101,6 @@ footer li {
     justify-content: center;
     gap: 2em;
     border-radius: 100%;
-    padding: 50px;
     background-repeat: no-repeat;
     background-size: cover;
     border: 2px solid;
@@ -159,44 +108,29 @@ footer li {
     transition: 1s;
 }
 
-footer:hover {
-    background-color: rgb(43, 53, 61);
-}
-
-h3 {
-    padding-left: 30px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
-}
-
-h2 {
-    padding-top: 600px;
-    padding-left: 100px;
-}
-
 .login {
-    filter: blur();
-    height: 30vh;
-    width: 30vh;
+    height: 30rem;
+    width: 34rem;
     background-color: rgba(0, 0, 0, 30%);
     border-radius: 63px;
     padding: 2em;
-    font-size: 20px;
+    font-size: 1.6rem;
     display: flex;
     flex-direction: column;
-
+    text-align: center;
 }
 
 .login form {
+    padding: 0.4rem;
     height: 100%;
+    width: 100%;
     display: flex;
     flex-flow: column nowrap;
-
-    align-items: start;
     gap: 1em;
 }
 
 input {
+    color: white;
     border-radius: 100px;
     border-color: aliceblue;
     border: 0px solid;
@@ -205,33 +139,32 @@ input {
     text-indent: 2em;
     background-color: rgba(255, 255, 255, 0.384);
     cursor: pointer;
+    font-size: 100%;
 }
 
 .botao {
     text-indent: 0;
     color: rgb(255, 255, 255);
     background-color: rgb(142, 12, 171);
+    transition: 0.5s ease-in-out;
 }
 
 .botao:hover {
+    letter-spacing: 0.05em;
     background-color: rgb(55, 13, 83);
 }
 
 .login h1 {
     color: aliceblue;
-    font-size: 30px;
+    font-size: 2em;
 }
 
-.albums {
-    text-align: center;
+footer .albuns {
+    height: 100%;
     display: flex;
     list-style-type: none;
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 10em;
-}
-
-footer li {
-    margin: 100px;
-    padding: 100px;
 }
