@@ -29,20 +29,21 @@ body {
 }
 
 header {
-    background-color: rgb(44, 40, 51);
+    background-color: rgb(41, 35, 58);
     color: rgb(255, 255, 255);
     grid-area: header;
-    height: 15vh;
+    height: 10vh;
     grid-column-start: 1;
     grid-column-end: 3;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 5em;
+    
 }
 
 header ul :hover {
-    background-color: rgb(51, 85, 88);
+    background-color: rgb(67, 54, 117);
 }
 
 header nav {
