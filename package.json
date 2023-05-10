@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Jornal da escola DR Pedro De Moraes Victor",
   "main": "index.js",
+  "engines": {
+    "node": "18"
+  },
   "scripts": {
     "start": "node src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
