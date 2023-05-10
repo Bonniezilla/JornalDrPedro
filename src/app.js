@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const { client, connection } = require('./connection');
 
-const port = 3000;
+const port = 3333;
 const app = express();
 
 var username = 'Pedro';

@@ -1,11 +1,11 @@
 const { Client } = require('pg');
 
 const client = new Client({
-    user: 'postgres',
-    host: 'localhost',
-    database: 'JornalDev',
-    password: 'borespedro1',
-    port: 5473
+    user: 'jornal_dr_pedro_db_user',
+    host: 'postgres://jornal_dr_pedro_db_user:ywqkH4IMeCsa0r7Oc19rGTews4uVwHTn@dpg-ch8hqttgk4q7lmqj4ifg-a/jornal_dr_pedro_db',
+    database: 'jornal_dr_pedro_db',
+    password: 'ywqkH4IMeCsa0r7Oc19rGTews4uVwHTn',
+    port: 5432
 });
 
 const connection = {
