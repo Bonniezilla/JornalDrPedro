@@ -3,7 +3,7 @@ const session = require('express-session');
 const ejs = require('ejs');
 const bodyParser = require('body-parser');
 const path = require('path');
-const { client, connection } = require('./connection');
+const { pool } = require('./connection');
 
 const port = 3333;
 const app = express();
@@ -22,29 +22,34 @@ const indexRouter = require('./routes/index');
 const loginRouter = require('./routes/login');
 
 app.post('/login', (req, res) => {
-    connection.init();
+    pool.connect()
+        .then(client => {
+            const { username, password } = req.body;
+            const query = `SELECT * FROM usuarios WHERE username = $1 AND password = $2`;
 
-    const { username, password } = req.body;
-
-    const query = "SELECT * FROM usuarios WHERE username = $1 AND password = $2";
-
-    client.query(query, [username, password], (err, result) => {
-        connection.destroy();
-
-        if (err) {
-            console.error('Ocorreu um erro', err);
+            client.query(query, [username, password])
+                .then((result) => {
+                    if (result.rowCount === 0) {
+                        console.log('Credenciais inválidas tente novamente');
+                        return res.redirect('/');
+                    }
+                    console.log(`Seja bem vindo, ${username}!`);
+                    req.session.login = true;
+                    return res.redirect('/');
+                })
+                .catch((err) => {
+                    console.error('Erro encontrado:', err);
+                    return res.redirect('/');
+                })
+                .finally(() => {
+                    client.release();
+                })
+        })
+        .catch((err) => {
+            console.error('Erro encontrado:', err);
             return res.redirect('/');
-        }
+        });
 
-        if (result.rowCount === 0) {
-            console.log('Crendenciais inválidas');
-            return res.redirect('/');
-        }
-        
-        console.log(`${username} foi logado com sucesso!`)
-        req.session.login = true;
-        return res.redirect('/');
-    })
 });
 
 app.get('/login', (req, res) => {
