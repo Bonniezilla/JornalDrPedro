@@ -1,8 +1,7 @@
 const { Client } = require('pg');
 
 const client = new Client({
-    connectionString: "postgres://jornal_dr_pedro_db_user:ywqkH4IMeCsa0r7Oc19rGTews4uVwHTn@dpg-ch8hqttgk4q7lmqj4ifg-a.ohio-postgres.render.com/jornal_dr_pedro_db",
-    ssl: true
+    connectionString: "postgres://jornal_dr_pedro_db_user:ywqkH4IMeCsa0r7Oc19rGTews4uVwHTn@dpg-ch8hqttgk4q7lmqj4ifg-a/jornal_dr_pedro_db",
 });
 
 const connection = {
