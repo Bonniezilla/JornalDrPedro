@@ -17,11 +17,11 @@ app.use(session({
 
 const indexRouter = require('./routes/index');
 const loginRouter = require('./routes/login');
-const logupRouter = require('./routes/logup');
+const signupRouter = require('./routes/signup');
 
 app.use('/', indexRouter);
 app.use('/login', loginRouter);
-app.use('/logup', logupRouter);
+app.use('/signup', signupRouter);
 
 app.set('view engine', 'ejs');
 
