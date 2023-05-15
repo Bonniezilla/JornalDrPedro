@@ -18,9 +18,9 @@ router.post('/', async (req, res) => {
         return res.redirect('/');
     }
     req.session.login = true;
-    res.redirect('/');
-
-    return console.log(`Usuário ${user.username} conectado com sucesso!`);
+    
+    console.log(`Usuário ${user.username} conectado com sucesso!`);
+    return res.redirect('/');
 });
 
 router.get('/', (req, res) => {
