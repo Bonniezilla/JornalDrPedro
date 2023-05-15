@@ -1,10 +1,12 @@
+require('dotenv').config()
 const express = require('express');
 const session = require('express-session');
 const ejs = require('ejs');
 const path = require('path');
+
 const bodyParser = require('body-parser');
 
-const port = 3000;
+const port = 3333;
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -23,6 +25,7 @@ app.use('/login', loginRouter);
 app.use('/logup', logupRouter);
 
 app.set('view engine', 'ejs');
+
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
