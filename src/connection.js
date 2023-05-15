@@ -1,13 +1,7 @@
-const { Pool } = require('pg');
+const { PrismaClient } = require('@prisma/client');
 
-const pool = new Pool({
-    connectionString: process.env.DB_URL,
-    ssl: {
-        rejectUnauthorized: false
-    }
-});
-
+const prisma = new PrismaClient();
 
 module.exports = {
-    pool
+    prisma
 };
