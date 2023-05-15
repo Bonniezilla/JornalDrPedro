@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Jornal da escola DR Pedro De Moraes Victor",
   "main": "index.js",
+  "engines": {
+    "node": "18"
+  },
   "scripts": {
     "dev": "nodemon src/app.js",
     "start": "node src/app.js",
