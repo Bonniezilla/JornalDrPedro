@@ -9,7 +9,7 @@ router.post('/', async (req, res) => {
         where: {
             username: username
         }
-    });
+    })
     if (!user) {
         console.log('Usuário não existe');
         return res.redirect('/');
@@ -25,5 +25,6 @@ router.post('/', async (req, res) => {
 
 router.get('/', (req, res) => {
     return res.redirect('/');
-})
+});
+
 module.exports = router;
