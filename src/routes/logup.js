@@ -12,10 +12,10 @@ router.post('/', async (req, res) => {
     })
     if (!user) {
         console.log('Usuário não existe');
-        return res.redirect('/');
+        return res.redirect('/logup');
     } else if (password !== user.password) {
         console.log('Senha inválida');
-        return res.redirect('/');
+        return res.redirect('/logup');
     }
     
     req.session.login = true;
