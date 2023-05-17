@@ -1,44 +1,66 @@
 const express = require('express');
 const { prisma } = require('../connection');
-const { Console } = require('console');
+const { z } = require('zod');
+
 const router = express.Router();
 
 router.post('/', async (req, res) => {
-    const { username, email, password } = req.body;
+    try {
+        const createUserSchema = z.object({
+            username: z.string().min(3),
+            email: z.string().email(),
+            password: z.string().min(8)
+        });
 
-    const checkUsername = await prisma.user.findUnique({
-        where: {
-            username: username
-        }
-    })
+        const { username, email, password } = createUserSchema.parse(req.body)
 
-    if (checkUsername) {
-        return new Error('Nome de usuário já está sendo utilizado');
+        const checkUsername = await prisma.user.findUnique({
+            where: {
+                username: username
+            }
+        });
+
+        const checkUserEmail = await prisma.user.findUnique({
+            where: {
+                email: email
+            }
+        });
+
+        if (checkUsername) {
+            console.log('Nome de usuário já está sendo utilizado');
+            return res.redirect('/signup');
+        };
+
+        if (checkUserEmail) {
+            console.log('Este email já está sendo utilizado');
+            return res.redirect('/signup');
+        };
+
+        const newUser = await prisma.user.create({
+            data: {
+                username: username,
+                email: email,
+                password: password
+            }
+        });
+
+        console.log("Usuário cadastrado com sucesso");
+        return res.send(newUser);
     }
-
-    const checkUserEmail = await prisma.user.findUnique({
-        where: {
-            email: email
+    catch (err) {
+        if (err instanceof z.ZodError) {
+            const validationErrors = err.errors.map((err) => err.message);
+            
+            console.log(validationErrors.toString());
+            return res.status(400).redirect('/signup');
+        } else {
+            res.status(500).send('Erro interno encontrado');
         }
-    })
-
-    if (checkUserEmail) {
-        return new Error('Este email já está sendo utilizado');
     }
-
-    const newUser = await prisma.user.create({
-        data: {
-            username: username,
-            email: email,
-            password: password
-        }
-    })
-    console.log("Usuário cadastrado com sucesso");
-    return res.send(newUser)
 });
 
 router.get('/', (req, res) => {
     res.render('signup');
-})
+});
 
 module.exports = router;
