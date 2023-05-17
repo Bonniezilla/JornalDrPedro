@@ -17,8 +17,8 @@ router.post('/', async (req, res) => {
         console.log('Senha inválida');
         return res.redirect('/');
     }
-    req.session.login = true;
     
+    req.session.login = true;
     console.log(`Usuário ${user.username} conectado com sucesso!`);
     return res.redirect('/');
 });
