@@ -26,7 +26,7 @@ body {
     align-content: center;
     background-position: center;
     display: flex;
-    border: solid 1px white;
+   
 }
 
 header {
@@ -40,6 +40,9 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0 5em;
+    position:fixed ;
+    width: 100vw;
+   
     
 }
 
@@ -168,17 +171,17 @@ input {
 h2{
     font-size: 100px;
     color: blueviolet;
-    margin-left: 100px;
+
 }
 .h2{
     font-size: 70px;
-    padding-left: 900px;
-    padding-top:100px;
+  
+   
 }
 
-.hp´{
+.hp{
     color: rgb(255, 255, 255);
     font-size: 70px;
-    padding-left: 900px;
-    padding-top:100px;   
+        
+
 }
