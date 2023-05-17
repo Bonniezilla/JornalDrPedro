@@ -26,8 +26,9 @@ router.post('/', async (req, res) => {
 router.get('/', (req, res) => {
     if (req.session.login) {
         return res.redirect('/');
+    } else {
+        return res.render('logup');
     }
-    res.render('logup');
 });
 
 module.exports = router;
