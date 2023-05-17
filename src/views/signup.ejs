@@ -7,6 +7,14 @@
     <title>Cadastro</title>
 </head>
 <body>
-    
+    <form method="post" action="/signup">
+        <input type="text" minlength="3" placeholder="Insira seu nome de usuário"
+        name="username" required>
+        <input type="email" placeholder="Insira seu email"
+        name="email" required>
+        <input type="password" minlength="8" placeholder="Insira uma senha de pelo menos 8 dígitos"
+        name="password" required>
+        <input type="submit" value="Criar">
+    </form>
 </body>
 </html>
