@@ -12,6 +12,7 @@ body {
 
 .container {
     display: grid;
+    grid-template-columns: 1fr 1fr  1fr 1fr ;
     grid-template-areas:
         "header"
         "main"
@@ -53,7 +54,7 @@ header ul :hover {
 header nav {
     display: flex;
     justify-content: right;
-    width: 90%;
+    width: 1400px;
     color: rgb(74, 63, 49);
 }
 
@@ -182,6 +183,7 @@ h2{
 .hp{
     color: rgb(255, 255, 255);
     font-size: 70px;
-        
+     
+      
 
 }
