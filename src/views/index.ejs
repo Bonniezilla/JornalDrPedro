@@ -21,7 +21,11 @@
         <li>Opções</li>
         <li>Explorar</li>
         <li>Comunidade</li>
-        <li><a href="/logout">Sair</a></li>
+        <% if (session) { %>
+          <li>Meu Perfil</li>
+        <% } else {%>  
+        <li><a href="/logup">Login</a></li>
+        <% } %>
       </ul>
     </nav>
   </header>

@@ -15,7 +15,7 @@ app.use(session({
 }));
 
 const indexRouter = require('./routes/index');
-const loginRouter = require('./routes/login');
+const loginRouter = require('./routes/logup');
 const signupRouter = require('./routes/signup');
 const logoutRouter = require('./routes/logout');
 
