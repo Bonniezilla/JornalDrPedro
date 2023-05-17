@@ -26,6 +26,7 @@ body {
     align-content: center;
     background-position: center;
     display: flex;
+    border: solid 1px white;
 }
 
 header {
@@ -81,6 +82,10 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+h2 main{
+    font-size: 80px;
+    color: rgb(255, 255, 255);
 }
 
 .linha nav {
@@ -158,6 +163,7 @@ input {
 .login h1 {
     color: aliceblue;
     font-size: 2em;
+    background-repeat: no-repeat;
 }
 
 footer .albuns {
