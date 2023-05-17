@@ -17,10 +17,12 @@ app.use(session({
 const indexRouter = require('./routes/index');
 const loginRouter = require('./routes/login');
 const signupRouter = require('./routes/signup');
+const logoutRouter = require('./routes/logout');
 
 app.use('/', indexRouter);
 app.use('/logup', loginRouter);
 app.use('/signup', signupRouter);
+app.use('/logout', logoutRouter);
 
 app.set('view engine', 'ejs');
 
@@ -28,5 +30,5 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.listen(process.env.PORT || port, () => {
-    console.log(`Servidor Rodando na porta ${port}`);
+    console.log(`Servidor Rodando na porta ${process.env.PORT || port}`);
 });
