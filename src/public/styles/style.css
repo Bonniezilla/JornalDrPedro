@@ -1,5 +1,5 @@
 * {
-    margin: 0;
+  
     padding: 0;
     box-sizing: border-box;
 }
@@ -26,7 +26,7 @@ body {
     align-content: center;
     background-position: center;
     display: flex;
-    border: solid 1px white;
+   
 }
 
 header {
@@ -40,6 +40,9 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0 5em;
+    position:fixed ;
+    width: 100vw;
+   
     
 }
 
@@ -74,19 +77,18 @@ main {
     background-color: rgb(49, 49, 70);
     color: aliceblue;
     grid-area: main;
-    background-image: url('../images/WhatsApp\ Image\ 2023-05-02\ at\ 11.27.05.jpeg');
+    background: 
+    linear-gradient(rgba(5, 5, 45, 0.614), rgba(11, 30, 97, 0.686)),
+    url('../images/SPBR_0309_ataliba_031-1.jpg');
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 100%;
     background-position: center;
     height: 75vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-h2 main{
-    font-size: 80px;
-    color: rgb(255, 255, 255);
-}
+
 
 .linha nav {
     height: 700px;
@@ -166,12 +168,20 @@ input {
     background-repeat: no-repeat;
 }
 
-footer .albuns {
-    height: 100%;
-    display: flex;
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10em;
+h2{
+    font-size: 100px;
+    color: blueviolet;
+
+}
+.h2{
+    font-size: 70px;
+  
+   
+}
+
+.hp{
+    color: rgb(255, 255, 255);
+    font-size: 70px;
+        
+
 }
