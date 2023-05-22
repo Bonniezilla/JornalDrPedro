@@ -9,7 +9,7 @@ const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(session({
-    secret: '123456',
+    secret: "ha8T_otE'<(@F=.ZJ]C'14",
     resave: false,
     saveUninitialized: false
 }));
