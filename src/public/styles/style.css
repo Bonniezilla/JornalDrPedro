@@ -168,6 +168,7 @@ input {
     font-size: 2em;
     background-repeat: no-repeat;
 }
+/*  
 
 h2{
     font-size: 100px;
@@ -187,7 +188,33 @@ h2{
       
 
 }
+
+ */
 span {
     color: rgb(142, 23, 189);
     font-weight: bold;
+  }
+.textcolor{
+    font-size: 100px;
+}
+
+.carousel {
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .carousel img {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Estilos para os botões de navegação (opcional) */
+  .carousel-prev,
+  .carousel-next {
+    cursor: pointer;
   }
