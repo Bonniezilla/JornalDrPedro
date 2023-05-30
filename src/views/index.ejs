@@ -17,11 +17,14 @@
     <h1>PEDRO DE MORAES VICTOR</h1>
     <nav>
       <ul>
-        <li>login</li>
         <li>Perfil</li>
         <li>S.E.D</li>
         <li>Comunidade</li>
-        <li><a href="/logout">Sair</a></li>
+        <% if (session) { %>
+          <li>Meu Perfil</li>
+        <% } else {%>  
+        <li><a href="/logup">Login</a></li>
+        <% } %>
       </ul>
     </nav>
   </header>
