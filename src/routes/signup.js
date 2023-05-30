@@ -1,5 +1,5 @@
 const express = require('express');
-const { prisma } = require('../connection');
+const { prisma } = require('../prisma');
 const { z } = require('zod');
 
 const router = express.Router();
@@ -27,12 +27,10 @@ router.post('/', async (req, res) => {
         });
 
         if (checkUsername) {
-            console.log('Nome de usuário já está sendo utilizado');
             return res.redirect('/signup');
         };
 
         if (checkUserEmail) {
-            console.log('Este email já está sendo utilizado');
             return res.redirect('/signup');
         };
 
@@ -44,8 +42,7 @@ router.post('/', async (req, res) => {
             }
         });
 
-        console.log("Usuário cadastrado com sucesso");
-        return res.send(newUser);
+        return res.redirect('/logup');
     }
     catch (err) {
         if (err instanceof z.ZodError) {

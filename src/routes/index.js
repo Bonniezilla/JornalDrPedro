@@ -1,12 +1,12 @@
-const express = require('express')
+const express = require('express');
 
 const router =  express.Router();
 
 router.get('/', (req, res) => {
-    if (req.session.login) {
-        res.render('index');
+    if (req.session.identifier) {
+        res.render('index', { session: req.session });
     } else {
-        res.render('login');
+        res.render('index', {session: undefined});
     }
 });
 
