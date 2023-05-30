@@ -12,25 +12,9 @@
 </head>
 
 <body>
-  <header>
-    <div class="logo"> </div>
-    <h1>PEDRO DE MORAES VICTOR</h1>
-    <nav>
-      <ul>
-        <li>Perfil</li>
-        <li>S.E.D</li>
-        <li>Comunidade</li>
-        <% if (session) { %>
-          <li>Meu Perfil</li>
-        <% } else {%>  
-        <li><a href="/logup">Login</a></li>
-        <% } %>
-      </ul>
-    </nav>
-  </header>
-  
-  <main>
-    <!-- 
+  <%- include('../components/header') %>
+    <main>
+      <!-- 
     <div class="hp"> 
       <h3> Seja </h3>
       <h2> bem </h2>
@@ -38,22 +22,21 @@
     </div>
    -->
 
-<div class="textcolor">
-    <p>Seja <span>bem</span> vindo </p>
-</div>
-
-  </main>
-  
-  <footer>
-    <div class="carousel">
-      <div class="carousel-inner">
-        <img src="image1.jpg" alt="Image 1">
-        <img src="image2.jpg" alt="Image 2">
-        <img src="image3.jpg" alt="Image 3">
+      <div class="textcolor">
+        <p>Seja <span>bem</span> vindo </p>
       </div>
-    </div>
-    
-  </footer>
+
+    </main>
+
+    <footer>
+      <div class="carousel">
+        <div class="carousel-inner">
+          <img src="image1.jpg" alt="Image 1">
+          <img src="image2.jpg" alt="Image 2">
+          <img src="image3.jpg" alt="Image 3">
+        </div>
+      </div>
+    </footer>
 </body>
 
 </html>

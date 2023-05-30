@@ -42,7 +42,7 @@ router.post('/', async (req, res) => {
             }
         });
 
-        return res.send(newUser);
+        return res.redirect('/logup');
     }
     catch (err) {
         if (err instanceof z.ZodError) {
