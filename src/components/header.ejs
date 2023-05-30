@@ -1,14 +1,18 @@
 <!-- Componente de Header com Navbar -->
 <header>
     <div class="topnav" id="myTopnav">
-      <a href="/logup" class="active">Login</a>
-      <a href="#news">News</a>
-      <a href="#contact">comunidade</a>
-      <a href="#about">opções</a>
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-        <i class="fa fa-bars"></i>
-      </a>
+        <% if (session) { %>
+            <a href="">Perfil</a>
+            <% } else { %>
+                <a href="/logup" class="active">Login</a>
+                <% } %>
+                    <a href="#news">News</a>
+                    <a href="#contact">Comunidade</a>
+                    <a href="#about">Opções</a>
+                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                        <i class="fa fa-bars"></i>
+                    </a>
     </div>
     <div class="logo"></div>
 
-  </header>
+</header>
