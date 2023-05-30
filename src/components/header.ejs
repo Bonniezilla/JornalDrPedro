@@ -1,16 +1,14 @@
 <!-- Componente de Header com Navbar -->
 <header>
-    <div class="logo"> </div>
-    <h1>PEDRO DE MORAES VICTOR</h1>
-    <nav>
-        <ul>
-            <li>S.E.D</li>
-            <li>Comunidade</li>
-            <% if (session) { %>
-                <li>Meu Perfil</li>
-                <% } else {%>
-                    <li><a href="/logup">Login</a></li>
-                    <% } %>
-        </ul>
-    </nav>
-</header>
+    <div class="topnav" id="myTopnav">
+      <a href="/logup" class="active">Login</a>
+      <a href="#news">News</a>
+      <a href="#contact">comunidade</a>
+      <a href="#about">opções</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <div class="logo"></div>
+
+  </header>
