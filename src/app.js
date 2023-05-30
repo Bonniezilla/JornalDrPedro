@@ -18,11 +18,13 @@ const indexRouter = require('./routes/index');
 const loginRouter = require('./routes/logup');
 const signupRouter = require('./routes/signup');
 const logoutRouter = require('./routes/logout');
+const deleteUserRouter = require('./routes/deleteuser')
 
 app.use('/', indexRouter);
 app.use('/logup', loginRouter);
 app.use('/signup', signupRouter);
 app.use('/logout', logoutRouter);
+app.use('/deleteuser', deleteUserRouter);
 
 app.set('view engine', 'ejs');
 

@@ -27,7 +27,7 @@ router.post('/', async (req, res) => {
             return res.redirect('/logup');
         }
     
-        req.session.login = true;
+        req.session.identifier = identifier;
         console.log(`Usuário ${user.username} conectado com sucesso!`);
         return res.redirect('/');
     }
@@ -45,7 +45,7 @@ router.post('/', async (req, res) => {
 });
 
 router.get('/', (req, res) => {
-    if (req.session.login) {
+    if (req.session.identifier) {
         return res.redirect('/');
     } else {
         return res.render('logup');
